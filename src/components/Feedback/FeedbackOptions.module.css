@@ -42,24 +42,3 @@
 .feedBackBtn:hover {
     background-color: aqua;
 }
-
-/* Statistics */
-
-.statiscticsList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.statiscticsItem {
-    display: flex;
-    padding: 0;
-}
-
-.statiscticsItemText {
-    font-size: 18px;
-    line-height: 1.2;
-    margin: 0;
-}
