@@ -5,18 +5,23 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
     return (
         <div className={css.feedBack__container}>
             <ul className={css.feedBackList}>
-                {options.map(option => 
+                {options.map((option, index) => (
                     <li className={css.feedBackItem}>
-                    <button 
-                        name={option.name} 
-                        value={option.value} 
-                        className={css.feedBackBtn} 
-                        type="button" 
-                        onClick={onLeaveFeedback}>{option.tag}
+                    <button
+                        key={index} 
+                        className={css.feedBackBtn}
+                        onClick={() => onLeaveFeedback(option)}
+                        >
+                            {option}
                     </button>
                 </li>
-                ).join('')}
+                ))}
             </ul>
         </div>
-    );
+    )
 }
+
+FeedbackOptions.propTypes = {
+    options: propTypes.arrayOf(propTypes.string).isRequired,
+    onLeaveFeedback: propTypes.func,
+  };

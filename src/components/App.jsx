@@ -11,7 +11,7 @@ export class App extends Component {
     }
     
 
-  handleFeedback = (e) => {
+  handleFeedback = e => {
     const {good, neutral, bad} = this.state;
     if (e === 'Good') {
       this.setState({good: good + 1});
@@ -53,7 +53,7 @@ export class App extends Component {
             <Section title='Please leave feedback'>
             <FeedbackOptions 
             options={['Good', 'Neutral', 'Bad']} 
-            onLeaveFeedback={this.handleFeedback()} 
+            onLeaveFeedback={this.handleFeedback} 
             />
             </Section>
             <Section title='Statistics'>
