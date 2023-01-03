@@ -12,12 +12,14 @@ export class App extends Component {
     
 
   handleFeedback = (e) => {
-      const {name, value} = e.currentTarget;
-
-      this.setState(prevState => ({
-          [name]: Number(value) + 1,
-          
-      }));
+    const {good, neutral, bad} = this.state;
+    if (e === 'Good') {
+      this.setState({good: good + 1});
+    } else if (e === 'Neutral') {
+      this.setState({neutral: neutral + 1});
+    } else if (e === 'Bad') {
+      this.setState({bad: bad + 1});
+    }
   };
 
   countTotalFeedback = () => {
@@ -50,11 +52,7 @@ export class App extends Component {
           >
             <Section title='Please leave feedback'>
             <FeedbackOptions 
-            options={[
-                      {tag: 'Good', name: good, value: this.state.good},
-                      {tag: 'Neutral', name: neutral, value: this.state.neutral},
-                      {tag: 'Bad', name: bad, value: this.state.bad},
-                    ]} 
+            options={['Good', 'Neutral', 'Bad']} 
             onLeaveFeedback={this.handleFeedback()} 
             />
             </Section>
