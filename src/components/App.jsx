@@ -44,6 +44,7 @@ export class App extends Component {
             style={{
               height: '100vh',
               display: 'flex',
+              flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
               fontSize: 40,
@@ -58,9 +59,9 @@ export class App extends Component {
             </Section>
             <Section title='Statistics'>
               <Statistics
-                good={this.state.good}
-                neutral={this.state.neutral}
-                bad={this.state.bad}
+                good={good}
+                neutral={neutral}
+                bad={bad}
                 total={this.countTotalFeedback()}
                 positivePercentage={this.countPositiveFeedbackPercentage()}
               />
