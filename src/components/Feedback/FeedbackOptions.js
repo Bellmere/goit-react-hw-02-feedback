@@ -6,9 +6,8 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
         <div className={css.feedBack__container}>
             <ul className={css.feedBackList}>
                 {options.map((option, index) => (
-                    <li className={css.feedBackItem}>
-                    <button
-                        key={index} 
+                    <li className={css.feedBackItem} key={index}>
+                    <button 
                         className={css.feedBackBtn}
                         onClick={() => onLeaveFeedback(option)}
                         >
