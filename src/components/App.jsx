@@ -13,7 +13,6 @@ export class App extends Component {
     
 
   handleFeedback = e => {
-    const {good, neutral, bad} = this.state;
     this.setState((prevState) => ({
       [e]: prevState[e] + 1
     }));
